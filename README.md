@@ -8,3 +8,8 @@ S3+CloudFrontによるSPAを作成する。
 ```
 curl -fsSL https://bun.sh/install | bash
 ```
+
+## node_modulesの作成
+```
+bun install
+```
