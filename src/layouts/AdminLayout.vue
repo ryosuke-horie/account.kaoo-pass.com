@@ -1,6 +1,8 @@
 <template>
   <v-layout class="rounded rounded-md">
-    <v-app-bar title="｛ジム名｝ 会員管理" />
+    <v-app-bar>
+        <img src="../assets/logo_150x50.webp" alt="logo" height="50" />
+    </v-app-bar>
 
     <v-navigation-drawer>
       <v-list>
