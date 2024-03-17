@@ -5,6 +5,7 @@
     <v-navigation-drawer>
       <v-list>
         <v-list-item title="ナビゲーションメニューを記載する場所" />
+        <v-list-item><router-link to="/login">ログイン</router-link></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
