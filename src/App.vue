@@ -5,7 +5,7 @@ import Login from './components/Login.vue';
 
 <template>
     <AdminLayout>
-        この中でコンテンツを表示します
+        <!-- この中でコンテンツを表示します -->
         <Login />
     </AdminLayout>
 </template>
