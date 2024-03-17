@@ -10,12 +10,32 @@
 
     <v-navigation-drawer>
       <v-list>
-        <v-list-item title="ナビゲーションメニューを記載する場所" />
-        <v-list-item>
-          <router-link to="/login">
+        <router-link to="/login">
             ログイン
+        </router-link>
+
+        <router-link to="/logout">
+            ログアウト
+        </router-link>
+
+        <v-list-item title="会員管理">
+          <router-link to="/dashboard">
+            会員一覧
           </router-link>
         </v-list-item>
+
+        <v-list-item title="その他">
+          <router-link to="/term">
+            利用規約
+          </router-link>
+          <router-link to="/privacy">
+            プライバシーポリシー
+          </router-link>
+          <router-link to="/contact">
+            お問い合わせ
+          </router-link>
+        </v-list-item>
+
       </v-list>
     </v-navigation-drawer>
 
