@@ -1,7 +1,11 @@
 <template>
   <v-layout class="rounded rounded-md">
     <v-app-bar>
-        <img src="../assets/logo_150x50.webp" alt="logo" height="50" />
+      <img
+        src="../assets/logo_150x50.webp"
+        alt="logo"
+        height="50"
+      >
     </v-app-bar>
 
     <v-navigation-drawer>

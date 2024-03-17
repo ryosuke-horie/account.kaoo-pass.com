@@ -12,11 +12,11 @@ const visible = ref(false)
       max-width="448"
       rounded="lg"
     >
-    <img
-      class="mx-auto"
-      alt="logo"
-      src="../assets/logo_260x80.png"
-    />
+      <img
+        class="mx-auto"
+        alt="logo"
+        src="../assets/logo_260x80.png"
+      >
 
       <div class="text-subtitle-1 text-medium-emphasis">
         アカウント
