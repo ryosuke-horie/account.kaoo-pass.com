@@ -6,18 +6,18 @@ const visible = ref(false)
 
 <template>
   <div>
-    <v-img
-      class="mx-auto my-6"
-      max-width="228"
-      src="https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-v3-slim-text-light.svg"
-    />
-
     <v-card
-      class="mx-auto pa-12 pb-8"
+      class="mx-auto my-16 pa-12 pb-8 d-flex flex-column  justify-center"
       elevation="8"
       max-width="448"
       rounded="lg"
     >
+    <img
+      class="mx-auto"
+      alt="logo"
+      src="../assets/logo_260x80.png"
+    />
+
       <div class="text-subtitle-1 text-medium-emphasis">
         アカウント
       </div>
