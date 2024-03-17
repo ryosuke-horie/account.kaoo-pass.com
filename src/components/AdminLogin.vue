@@ -19,7 +19,7 @@ const visible = ref(false)
       rounded="lg"
     >
       <div class="text-subtitle-1 text-medium-emphasis">
-        Account
+        アカウント
       </div>
 
       <v-text-field
@@ -30,7 +30,7 @@ const visible = ref(false)
       />
 
       <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between">
-        Password
+        パスワード
 
         <a
           class="text-caption text-decoration-none text-blue"
@@ -38,7 +38,7 @@ const visible = ref(false)
           rel="noopener noreferrer"
           target="_blank"
         >
-          Forgot login password?</a>
+          パスワードを忘れましたか?</a>
       </div>
 
       <v-text-field
@@ -68,19 +68,8 @@ const visible = ref(false)
         variant="tonal"
         block
       >
-        Log In
+        ログイン
       </v-btn>
-
-      <v-card-text class="text-center">
-        <a
-          class="text-blue text-decoration-none"
-          href="#"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Sign up now <v-icon icon="mdi-chevron-right" />
-        </a>
-      </v-card-text>
     </v-card>
   </div>
 </template>
