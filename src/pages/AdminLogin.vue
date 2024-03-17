@@ -15,7 +15,7 @@ const visible = ref(false)
       <img
         class="mx-auto"
         alt="logo"
-        src="../assets/logo_260x80.png"
+        src="../assets/logo_260x80.webp"
       >
 
       <div class="text-subtitle-1 text-medium-emphasis">
