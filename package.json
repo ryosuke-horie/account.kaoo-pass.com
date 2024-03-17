@@ -8,12 +8,14 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue src",
-    "fix" : "eslint --fix --ext .js,.ts,.vue src"
+    "fix": "eslint --fix --ext .js,.ts,.vue src"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vuetify": "^3.5.9"
   },
   "devDependencies": {
+    "@mdi/font": "^7.4.47",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
