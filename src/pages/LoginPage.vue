@@ -1,7 +1,25 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import useAuth from '../useAuth'
 
 const visible = ref(false)
+const email = ref('')
+const password = ref('')
+const router = useRouter()
+const { login } = useAuth()
+
+const handleLogin = async () => {
+  try {
+    await login({ email: email.value, password: password.value })
+    // ログイン成功後、Topページにリダイレクト
+    router.push('/')
+  } catch (error) {
+    // エラーハンドリング
+    console.error('Login failed:', error)
+    // 適切なエラーメッセージを表示
+  }
+}
 </script>
 
 <template>
@@ -23,6 +41,7 @@ const visible = ref(false)
       </div>
 
       <v-text-field
+        v-model="email"
         density="compact"
         placeholder="Email address"
         prepend-inner-icon="mdi-email-outline"
@@ -42,6 +61,7 @@ const visible = ref(false)
       </div>
 
       <v-text-field
+        v-model="password"
         :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
         :type="visible ? 'text' : 'password'"
         density="compact"
@@ -67,6 +87,7 @@ const visible = ref(false)
         size="large"
         variant="tonal"
         block
+        @click="handleLogin"
       >
         ログイン
       </v-btn>

@@ -10,23 +10,27 @@
 
     <v-navigation-drawer>
       <v-list>
-        <v-list-item title="認証">
-          <router-link to="/login">
-            ログイン
-          </router-link>
-          <br>
+        <template v-if="!isAuthenticated">
+          <v-list-item title="認証">
+            <router-link to="/login">
+              ログイン
+            </router-link>
+          </v-list-item>
+        </template>
 
-          <router-link to="/logout">
-            ログアウト
-          </router-link>
-          <br>
-        </v-list-item>
+        <template v-else>
+          <v-list-item title="認証">
+            <router-link to="/logout">
+              ログアウト
+            </router-link>
+          </v-list-item>
 
-        <v-list-item title="会員管理">
-          <router-link to="/dashboard">
-            会員一覧画面
-          </router-link>
-        </v-list-item>
+          <v-list-item title="会員管理">
+            <router-link to="/dashboard">
+              会員一覧画面
+            </router-link>
+          </v-list-item>
+        </template>
 
         <v-list-item title="その他">
           <router-link to="/term">
@@ -52,3 +56,10 @@
     </v-main>
   </v-layout>
 </template>
+
+<script setup>
+import { computed } from 'vue';
+import useAuth from '../useAuth';
+
+const { isAuthenticated } = useAuth();
+</script>

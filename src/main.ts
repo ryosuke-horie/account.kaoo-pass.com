@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+// import useAuth from './useAuth';
 
 // Vuetify
 import 'vuetify/styles'
@@ -12,5 +13,9 @@ const vuetify = createVuetify({
   components,
   directives,
 })
+
+// ユーザー情報を取得する
+// const { fetchUser } = useAuth();
+// fetchUser();
 
 createApp(App).use(router).use(vuetify).mount('#app')
