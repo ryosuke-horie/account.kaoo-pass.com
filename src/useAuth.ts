@@ -17,7 +17,7 @@ interface LoginResponse {
   user: User;
 }
 
-const backend = 'https://ject1xt608.execute-api.ap-northeast-1.amazonaws.com'
+const backend = 'https://api.kaoo-pass.com'
 // ログインAPIのURL
 const loginUrl = `${backend}/api/login`
 
