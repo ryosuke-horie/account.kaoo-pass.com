@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import useAuth from '../useAuth'
+import useAuth from '../fooks/useAuth'
 
 const visible = ref(false)
 const email = ref('')

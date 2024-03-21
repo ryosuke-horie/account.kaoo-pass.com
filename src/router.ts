@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import useAuth from './useAuth';
+import useAuth from './fooks/useAuth';
 import LoginPage from './pages/LoginPage.vue'
 import LogoutPage from './pages/LogoutPage.vue'
 import TopPage from './pages/TopPage.vue'
