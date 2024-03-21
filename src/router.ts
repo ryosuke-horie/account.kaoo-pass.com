@@ -29,7 +29,7 @@ const router = createRouter({
 
 // グローバルビフォーガード
 // ルート遷移前に実行され、未ログインならログインページにリダイレクト
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   const { isAuthenticated } = useAuth();
 
   if (to.matched.some((record) => record.meta.requiresAuth)) {
@@ -44,5 +44,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
 
 export default router;
