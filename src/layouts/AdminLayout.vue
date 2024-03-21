@@ -59,7 +59,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import useAuth from '../useAuth';
+import useAuth from '../fooks/useAuth';
 
 const { isAuthenticated } = useAuth();
 </script>
