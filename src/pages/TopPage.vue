@@ -1,23 +1,8 @@
-<template>
-  <v-data-table-virtual
-    :headers="headers"
-    :items="users"
-    item-value="name"
-  >
-    <template v-slot:item="{ item }">
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.address }}</td>
-        <td>{{ item.mail }}</td>
-        <td>{{ item.phone }}</td>
-      </tr>
-    </template>
-  </v-data-table-virtual>
-</template>
-
 <script setup>
 import { ref } from 'vue';
+
+// @see https://vuetifyjs.com/en/components/data-tables/virtual-tables/#basic-example
+// Data table - Virtual tablesを参照すること
 
 const headers = ref([
   {
@@ -51,3 +36,21 @@ const users = ref([
   },
 ]);
 </script>
+
+<template>
+  <v-data-table-virtual
+    :headers="headers"
+    :items="users"
+    item-value="name"
+  >
+    <template v-slot:item="{ item }">
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.mail }}</td>
+        <td>{{ item.phone }}</td>
+      </tr>
+    </template>
+  </v-data-table-virtual>
+</template>
