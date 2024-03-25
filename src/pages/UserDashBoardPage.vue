@@ -15,14 +15,12 @@ const fetchUsers = async () => {
             }
         });
         users.value = response.data;
-        console.log(response.data);
     } catch (error) {
         console.error(error);
     }
 };
 
 onMounted(async () => {
-    await fetchUser(); // ユーザー情報を取得
     await fetchUsers(); // ユーザー一覧を取得
 });
 
@@ -41,19 +39,15 @@ const headers = ref([
 </script>
 
 <template>
-  <v-data-table-virtual
-    :headers="headers"
-    :items="users"
-    item-value="name"
-  >
-    <template #item="{ item }">
-      <tr>
-        <td>{{ item.name }}</td>
-        <!-- <td>{{ item.age }}</td> -->
-        <!-- <td>{{ item.address }}</td> -->
-        <td>{{ item.email }}</td>
-        <!-- <td>{{ item.phone }}</td> -->
-      </tr>
-    </template>
-  </v-data-table-virtual>
+    <v-data-table-virtual :headers="headers" :items="users" item-value="name">
+        <template #item="{ item }">
+            <tr>
+                <td>{{ item.name }}</td>
+                <!-- <td>{{ item.age }}</td> -->
+                <!-- <td>{{ item.address }}</td> -->
+                <td>{{ item.email }}</td>
+                <!-- <td>{{ item.phone }}</td> -->
+            </tr>
+        </template>
+    </v-data-table-virtual>
 </template>
