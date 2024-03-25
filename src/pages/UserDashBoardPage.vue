@@ -25,7 +25,7 @@ onMounted(async () => {
 });
 
 const headers = ref([
-    { title: '写真', key: 'avator_iamge' },
+    { title: '写真', key: 'avatar_iamge' },
     {
         title: '名前',
         align: 'start',
@@ -44,7 +44,7 @@ const headers = ref([
         <template #item="{ item }">
             <tr>
                 <v-avatar>
-                    <v-img :src="item.avator_image"></v-img>
+                    <v-img :src="item.avatar_image"></v-img>
                 </v-avatar>
                 <td>{{ item.name }}</td>
                 <td>{{ item.age }}</td>
@@ -57,7 +57,7 @@ const headers = ref([
 </template>
 
 <style scoped>
-.avator {
+.avatar {
     width: 50px;
     height: 50px;
     border-radius: 20%;
