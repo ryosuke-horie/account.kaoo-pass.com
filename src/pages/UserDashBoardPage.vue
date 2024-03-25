@@ -1,56 +1,55 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import useAuth from '../fooks/useAuth'
 
-// @see https://vuetifyjs.com/en/components/data-tables/virtual-tables/#basic-example
-// Data table - Virtual tablesを参照すること
+const users = ref([]);
+const { token, fetchUser } = useAuth();
+
+// APIからデータを取得する
+const fetchUsers = async () => {
+    try {
+        const response = await axios.get('https://api.kaoo-pass.com/api/users', {
+            headers: {
+                'Authorization': 'Bearer ' + token.value
+            }
+        });
+        users.value = response.data;
+        console.log(response.data);
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+onMounted(async () => {
+    await fetchUser(); // ユーザー情報を取得
+    await fetchUsers(); // ユーザー一覧を取得
+});
 
 const headers = ref([
-  {
-    title: '会員一覧',
-    align: 'start',
-    sortable: false,
-    key: 'name',
-  },
-  { title: '年齢', key: 'age' },
-  { title: '住所', key: 'address' },
-  { title: 'メールアドレス', key: 'mail' },
-  { title: '電話番号', key: 'phone' },
-//   { title: '編集', key: 'edit' },
-//   { title: '削除', key: 'delete' },
-]);
-
-const users = ref([
-  {
-    name: 'テストユーザー1',
-    age: '20',
-    address: 159,
-    mail: 6.0,
-    phone: 24,
-  },
-  {
-    name: 'テストユーザー2',
-    age: '20',
-    address: 237,
-    mail: 9.0,
-    phone: 37,
-  },
+    {
+        title: '名前',
+        align: 'start',
+        sortable: false,
+        key: 'name',
+    },
+    // { title: '年齢', key: 'age' },
+    // { title: '住所', key: 'address' },
+    { title: 'メールアドレス', key: 'email' },
+    // { title: '電話番号', key: 'phone' },
 ]);
 </script>
 
 <template>
-  <v-data-table-virtual
-    :headers="headers"
-    :items="users"
-    item-value="name"
-  >
-    <template v-slot:item="{ item }">
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.address }}</td>
-        <td>{{ item.mail }}</td>
-        <td>{{ item.phone }}</td>
-      </tr>
-    </template>
-  </v-data-table-virtual>
+    <v-data-table-virtual :headers="headers" :items="users" item-value="name">
+        <template v-slot:item="{ item }">
+            <tr>
+                <td>{{ item.name }}</td>
+                <!-- <td>{{ item.age }}</td> -->
+                <!-- <td>{{ item.address }}</td> -->
+                <td>{{ item.email }}</td>
+                <!-- <td>{{ item.phone }}</td> -->
+            </tr>
+        </template>
+    </v-data-table-virtual>
 </template>
