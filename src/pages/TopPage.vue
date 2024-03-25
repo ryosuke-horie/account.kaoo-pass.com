@@ -1,3 +1,3 @@
 <template>
-    Top
+  Top
 </template>
