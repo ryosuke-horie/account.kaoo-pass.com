@@ -43,8 +43,9 @@ const headers = ref([
     <v-data-table-virtual :headers="headers" :items="users" item-value="name">
         <template #item="{ item }">
             <tr>
-                <!-- 下を修正 -->
-                <img :src="item.avator_image" alt="User Avatar" class="avator">
+                <v-avatar>
+                    <v-img :src="item.avator_image"></v-img>
+                </v-avatar>
                 <td>{{ item.name }}</td>
                 <td>{{ item.age }}</td>
                 <td>{{ item.address }}</td>
