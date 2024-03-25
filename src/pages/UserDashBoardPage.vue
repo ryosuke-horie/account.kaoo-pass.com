@@ -31,6 +31,7 @@ const headers = ref([
         sortable: false,
         key: 'name',
     },
+    { title: '写真', key: 'avator_iamge' },
     { title: '年齢', key: 'age' },
     { title: '住所', key: 'address' },
     { title: 'メールアドレス', key: 'email' },
@@ -39,19 +40,17 @@ const headers = ref([
 </script>
 
 <template>
-  <v-data-table-virtual
-    :headers="headers"
-    :items="users"
-    item-value="name"
-  >
-    <template #item="{ item }">
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.address }}</td>
-        <td>{{ item.email }}</td>
-        <td>{{ item.phone }}</td>
-      </tr>
-    </template>
-  </v-data-table-virtual>
+    <v-data-table-virtual :headers="headers" :items="users" item-value="name">
+        <template #item="{ item }">
+            <tr>
+                <!-- 下を修正 -->
+                <img :src="item.avator_image" alt="User Avatar">
+                <td>{{ item.name }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone }}</td>
+            </tr>
+        </template>
+    </v-data-table-virtual>
 </template>
