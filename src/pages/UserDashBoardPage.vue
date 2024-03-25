@@ -31,10 +31,10 @@ const headers = ref([
         sortable: false,
         key: 'name',
     },
-    // { title: '年齢', key: 'age' },
-    // { title: '住所', key: 'address' },
+    { title: '年齢', key: 'age' },
+    { title: '住所', key: 'address' },
     { title: 'メールアドレス', key: 'email' },
-    // { title: '電話番号', key: 'phone' },
+    { title: '電話番号', key: 'phone' },
 ]);
 </script>
 
@@ -47,10 +47,10 @@ const headers = ref([
     <template #item="{ item }">
       <tr>
         <td>{{ item.name }}</td>
-        <!-- <td>{{ item.age }}</td> -->
-        <!-- <td>{{ item.address }}</td> -->
+        <td>{{ item.age }}</td>
+        <td>{{ item.address }}</td>
         <td>{{ item.email }}</td>
-        <!-- <td>{{ item.phone }}</td> -->
+        <td>{{ item.phone }}</td>
       </tr>
     </template>
   </v-data-table-virtual>
