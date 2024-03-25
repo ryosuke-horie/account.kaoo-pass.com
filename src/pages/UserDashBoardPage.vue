@@ -25,6 +25,7 @@ onMounted(async () => {
 });
 
 const headers = ref([
+    { title: '写真', key: 'avatar_iamge' },
     {
         title: '名前',
         align: 'start',
@@ -32,26 +33,33 @@ const headers = ref([
         key: 'name',
     },
     { title: '年齢', key: 'age' },
-    { title: '住所', key: 'address' },
     { title: 'メールアドレス', key: 'email' },
     { title: '電話番号', key: 'phone' },
+    { title: '住所', key: 'address' },
 ]);
 </script>
 
 <template>
-  <v-data-table-virtual
-    :headers="headers"
-    :items="users"
-    item-value="name"
-  >
-    <template #item="{ item }">
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.address }}</td>
-        <td>{{ item.email }}</td>
-        <td>{{ item.phone }}</td>
-      </tr>
-    </template>
-  </v-data-table-virtual>
+    <v-data-table-virtual :headers="headers" :items="users" item-value="name">
+        <template #item="{ item }">
+            <tr>
+                <v-avatar>
+                    <v-img :src="item.avatar_image"></v-img>
+                </v-avatar>
+                <td>{{ item.name }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone }}</td>
+            </tr>
+        </template>
+    </v-data-table-virtual>
 </template>
+
+<style scoped>
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+}
+</style>
