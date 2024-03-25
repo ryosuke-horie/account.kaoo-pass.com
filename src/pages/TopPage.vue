@@ -1,3 +1,3 @@
 <template>
-  Topページ
+  Top
 </template>
