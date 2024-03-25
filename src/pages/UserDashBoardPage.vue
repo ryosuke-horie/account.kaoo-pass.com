@@ -25,17 +25,17 @@ onMounted(async () => {
 });
 
 const headers = ref([
+    { title: '写真', key: 'avator_iamge' },
     {
         title: '名前',
         align: 'start',
         sortable: false,
         key: 'name',
     },
-    { title: '写真', key: 'avator_iamge' },
     { title: '年齢', key: 'age' },
-    { title: '住所', key: 'address' },
     { title: 'メールアドレス', key: 'email' },
     { title: '電話番号', key: 'phone' },
+    { title: '住所', key: 'address' },
 ]);
 </script>
 
@@ -44,7 +44,7 @@ const headers = ref([
         <template #item="{ item }">
             <tr>
                 <!-- 下を修正 -->
-                <img :src="item.avator_image" alt="User Avatar">
+                <img :src="item.avator_image" alt="User Avatar" class="avator">
                 <td>{{ item.name }}</td>
                 <td>{{ item.age }}</td>
                 <td>{{ item.address }}</td>
@@ -54,3 +54,11 @@ const headers = ref([
         </template>
     </v-data-table-virtual>
 </template>
+
+<style scoped>
+.avator {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+}
+</style>
