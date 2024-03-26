@@ -1,7 +1,9 @@
 <script setup>
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 import useAuth from '../fooks/useAuth';
 
+const router = useRouter();
 const { isAuthenticated, logout } = useAuth();
 
 // ログアウトの処理
@@ -9,6 +11,8 @@ const handleLogout = async () => {
     try {
         // tokenをローカルストレージから削除する
         await logout();
+        // ログイン画面に遷移
+        router.push('/login');
     } catch (error) {
         // エラーハンドリング
         console.error('Logout failed:', error);
