@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import useAuth from './fooks/useAuth';
 import LoginPage from './pages/LoginPage.vue'
-import LogoutPage from './pages/LogoutPage.vue'
 import TopPage from './pages/TopPage.vue'
 import UserDashBoardPage from './pages/UserDashBoardPage.vue'
 import UserDetailpage from './pages/UserDetailpage.vue'
@@ -13,7 +12,6 @@ import ContactPage from './pages/ContactPage.vue'
 const routes = [
   { path: '/', name: 'Top', component: TopPage, meta: { requiresAuth: true } },
   { path: '/login', name: 'Login', component: LoginPage },
-  { path: '/logout', name: 'Logout', component: LogoutPage, meta: { requiresAuth: true } },
   { path: '/term', name: 'Term', component: TermsPage },
   { path: '/contact', name: 'Contact', component: ContactPage },
   { path: '/privacy', name: 'Privacy', component: PrivacyPolocy },
