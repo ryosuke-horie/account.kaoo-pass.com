@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 import useAuth from '../fooks/useAuth';
 
 const router = useRouter();
-const { isAuthenticated, logout } = useAuth();
+const { logout } = useAuth();
 
 // ログアウトの処理
 const handleLogout = async () => {
@@ -28,27 +28,21 @@ const handleLogout = async () => {
 
         <v-navigation-drawer>
             <v-list>
-                <template v-if="!isAuthenticated">
-                    <v-list-item title="認証">
-                        <router-link to="/login">
-                            ログイン
-                        </router-link>
-                    </v-list-item>
-                </template>
+                <v-list-item title="認証">
+                    <router-link to="/login">
+                        ログイン
+                    </router-link>
+                    <br>
+                    <a @click="handleLogout" class="text-decoration-underline">
+                        ログアウト
+                    </a>
+                </v-list-item>
 
-                <template v-else>
-                    <v-list-item title="認証">
-                        <a @click="handleLogout" class="text-decoration-none">
-                            ログアウト
-                        </a>
-                    </v-list-item>
-
-                    <v-list-item title="会員管理">
-                        <router-link to="/dashboard">
-                            会員一覧画面
-                        </router-link>
-                    </v-list-item>
-                </template>
+                <v-list-item title="会員管理">
+                    <router-link to="/dashboard">
+                        会員一覧画面
+                    </router-link>
+                </v-list-item>
 
                 <v-list-item title="その他">
                     <router-link to="/term">
