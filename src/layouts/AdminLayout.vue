@@ -47,7 +47,11 @@ const handleLogout = async () => {
 
         <v-list-item title="会員管理">
           <router-link to="/dashboard">
-            会員一覧画面
+            会員一覧
+          </router-link>
+          <br>
+          <router-link to="/user/add">
+            会員登録
           </router-link>
         </v-list-item>
 

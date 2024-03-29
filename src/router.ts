@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import useAuth from './fooks/useAuth';
 import LoginPage from './pages/LoginPage.vue'
 import TopPage from './pages/TopPage.vue'
+import UserAddPage from './pages/UserAddPage.vue'
 import UserDashBoardPage from './pages/UserDashBoardPage.vue'
 import UserDetailpage from './pages/UserDetailpage.vue'
 import UserEditPage from './pages/UserEditPage.vue'
@@ -16,6 +17,7 @@ const routes = [
   { path: '/contact', name: 'Contact', component: ContactPage },
   { path: '/privacy', name: 'Privacy', component: PrivacyPolocy },
   { path: '/dashboard', name: 'Dashboard', component: UserDashBoardPage, meta: { requiresAuth: true } },
+  { path: '/user/add', name: 'UserAdd', component: UserAddPage, meta: { requiresAuth: true } },
   { path: '/user/:id', name: 'UserDetail', component: UserDetailpage, meta: { requiresAuth: true } },
   { path: '/user/:id/edit', name: 'UserEdit', component: UserEditPage, meta: { requiresAuth: true } },
 ]
