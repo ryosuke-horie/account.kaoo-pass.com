@@ -22,6 +22,7 @@ const image2 = ref(null)
 const image3 = ref(null)
 
 // フォームの値を登録するsubmitアクション
+// すべて必須項目
 const submitForm = async () => {
   // フォームの値をオブジェクトにまとめる
   const formData = {
@@ -34,14 +35,13 @@ const submitForm = async () => {
   }
 
   // 空の値がある場合はアラートを表示して処理を中断する
-    if (!formData.name || !formData.mail || !formData.phone || !formData.avatarImage || !formData.image2 || !formData.image3) {
-        alert('すべての項目を入力してください。')
-        return
-    }
+  if (!formData.name || !formData.mail || !formData.phone || !formData.avatarImage || !formData.image2 || !formData.image3) {
+      alert('すべての項目を入力してください。')
+      return
+  }
 
   try {
-    // サーバーにデータを送信する処理を実装する
-    // 例えば、axios を使用して API リクエストを送信する
+    // TODO:サーバーにデータを送信する処理を実装する
     // const response = await axios.post('/api/register', formData)
 
     // 送信が成功した場合はアラートを表示する
