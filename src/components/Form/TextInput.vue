@@ -23,9 +23,9 @@ const onInput = (event) => {
 
 <template>
   <v-text-field
-    :modelValue="inputValue"
-    @input="onInput"
+    :model-value="inputValue"
     :rules="rules"
     :label="label"
-  ></v-text-field>
+    @input="onInput"
+  />
 </template>

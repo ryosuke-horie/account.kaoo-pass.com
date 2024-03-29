@@ -27,11 +27,11 @@ const onFileChange = (files) => {
 
 <template>
   <v-file-input
-    :modelValue="selectedFiles"
-    @update:modelValue="onFileChange"
+    :model-value="selectedFiles"
     :accept="accept"
     :label="label"
     :multiple="multiple"
     chips
-  ></v-file-input>
+    @update:model-value="onFileChange"
+  />
 </template>
