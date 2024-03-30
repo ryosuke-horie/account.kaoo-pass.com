@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
+import axios from 'axios'
 import TextInput from '../components/Form/TextInput.vue'
 import FileInput from '../components/Form/FileInput.vue'
 
@@ -13,49 +14,62 @@ const requreRule = [
 
 // ユーザー情報 Input要素の値
 const name = ref('') // 氏名
-const mail = ref('') // メールアドレス
+const email = ref('') // メールアドレス
 const phone = ref('') // 電話番号
+const age = ref(0) // 年齢
+const address = ref('') // 住所
 
 // 画像
-const avatarImage = ref(null)
+const avatar_image = ref(null)
 const image2 = ref(null)
 const image3 = ref(null)
 
 // フォームの値を登録するsubmitアクション
 // すべて必須項目
 const submitForm = async () => {
-  // フォームの値をオブジェクトにまとめる
-  const formData = {
-    name: name.value,
-    mail: mail.value,
-    phone: phone.value,
-    avatarImage: avatarImage.value,
-    image2: image2.value,
-    image3: image3.value,
+  const formData = new FormData()
+  formData.append('name', name.value)
+  formData.append('email', email.value)
+  formData.append('phone', phone.value)
+  formData.append('age', age.value)
+  formData.append('address', address.value)
+
+  if (avatar_image.value && avatar_image.value.length > 0) {
+    formData.append('avatar_image', avatar_image.value[0])
+  }
+  if (image2.value && image2.value.length > 0) {
+    formData.append('image2', image2.value[0])
+  }
+  if (image3.value && image3.value.length > 0) {
+    formData.append('image3', image3.value[0])
   }
 
-  // 空の値がある場合はアラートを表示して処理を中断する
-  if (!formData.name || !formData.mail || !formData.phone || !formData.avatarImage || !formData.image2 || !formData.image3) {
-      alert('すべての項目を入力してください。')
-      return
+  if (!name.value || !email.value || !phone.value || !age.value || !address.value || !avatar_image.value || !image2.value || !image3.value) {
+    alert('すべての項目を入力してください。')
+    return
   }
 
   try {
-    // TODO:サーバーにデータを送信する処理を実装する
-    // const response = await axios.post('/api/register', formData)
+    const token = localStorage.getItem('token')
+    const url = 'https://api.kaoo-pass.com/api/users'
+    const response = await axios.post(url, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data',
+      },
+    })
 
-    // 送信が成功した場合はアラートを表示する
     alert('会員登録が完了しました。')
 
-    // フォームの値をリセットする
     name.value = ''
-    mail.value = ''
+    email.value = ''
     phone.value = ''
-    avatarImage.value = null
+    age.value = 0
+    address.value = ''
+    avatar_image.value = null
     image2.value = null
     image3.value = null
   } catch (error) {
-    // エラーハンドリングを行う
     console.error(error)
     alert('会員登録に失敗しました。')
   }
@@ -81,7 +95,7 @@ const submitForm = async () => {
           label="氏名"
         />
         <TextInput
-          v-model="mail"
+          v-model="email"
           :rules="requreRule"
           label="メールアドレス"
         />
@@ -90,9 +104,19 @@ const submitForm = async () => {
           :rules="requreRule"
           label="電話番号"
         />
+        <TextInput
+          v-model="age"
+          :rules="requreRule"
+          label="年齢"
+        />
+        <TextInput
+          v-model="address"
+          :rules="requreRule"
+          label="住所"
+        />
 
         <FileInput
-          v-model="avatarImage"
+          v-model="avatar_image"
           accept="image/*"
           label="顔写真1"
         />
