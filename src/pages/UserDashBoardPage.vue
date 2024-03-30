@@ -73,11 +73,15 @@ const confirmUnsubscribeUser = (user) => {
 // ユーザー退会処理
 const unsubscribeUser = async (user) => {
     try {
-        const response = await axios.delete(`https://api.kaoo-pass.com/api/users/unsubscribe/${user.id}`, {
+        const response = await axios.post(
+          `https://api.kaoo-pass.com/api/users/unsubscribe/${user.id}`,
+          null,
+          {
             headers: {
-                'Authorization': 'Bearer ' + token.value
+              'Authorization': 'Bearer ' + token.value
             }
-        });
+          }
+        );
         alert('退会処理が完了しました。');
         await fetchUsers();
     } catch (error) {
