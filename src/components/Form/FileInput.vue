@@ -10,15 +10,13 @@ const props = defineProps({
     type: String,
     default: 'File input',
   },
-  multiple: {
-    type: Boolean,
-    default: false,
+  modelValue: {
+    type: Array,
+    default: () => [],
   },
 })
 
 const emit = defineEmits(['update:modelValue'])
-
-const selectedFiles = ref(null)
 
 const onFileChange = (files) => {
   emit('update:modelValue', files)
@@ -27,10 +25,9 @@ const onFileChange = (files) => {
 
 <template>
   <v-file-input
-    :model-value="selectedFiles"
+    :model-value="modelValue"
     :accept="accept"
     :label="label"
-    :multiple="multiple"
     chips
     @update:model-value="onFileChange"
   />
