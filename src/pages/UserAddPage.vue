@@ -1,8 +1,11 @@
 <script setup>
 import { ref, watch } from 'vue'
+import { useRouter } from 'vue-router';
 import axios from 'axios'
 import TextInput from '../components/Form/TextInput.vue'
 import FileInput from '../components/Form/FileInput.vue'
+
+const router = useRouter();
 
 // 必須項目チェックのルール
 const requreRule = [
@@ -69,6 +72,9 @@ const submitForm = async () => {
     avatar_image.value = null
     image2.value = null
     image3.value = null
+
+    // 会員一覧画面に遷移
+    router.push('/dashboard');
   } catch (error) {
     console.error(error)
     alert('会員登録に失敗しました。')
