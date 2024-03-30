@@ -30,13 +30,15 @@ const image3 = ref(null)
 // フォームの値を登録するsubmitアクション
 // すべて必須項目
 const submitForm = async () => {
+  // FormDataオブジェクトを作成
   const formData = new FormData()
+
+  // FormDataオブジェクトに値を集約
   formData.append('name', name.value)
   formData.append('email', email.value)
   formData.append('phone', phone.value)
   formData.append('age', age.value)
   formData.append('address', address.value)
-
   if (avatar_image.value && avatar_image.value.length > 0) {
     formData.append('avatar_image', avatar_image.value[0])
   }
