@@ -19,7 +19,7 @@ const requreRule = [
 const name = ref('') // 氏名
 const email = ref('') // メールアドレス
 const phone = ref('') // 電話番号
-const age = ref(0) // 年齢
+const age = ref('') // 年齢
 const address = ref('') // 住所
 
 // 画像
@@ -79,7 +79,7 @@ const submitForm = async () => {
     router.push('/dashboard');
   } catch (error) {
     console.error(error)
-    alert('会員登録に失敗しました。')
+    alert('会員登録に失敗しました。すべての項目が入力されていることをご確認ください。解決しない場合はお問い合わせください。')
   }
 }
 </script>
@@ -143,7 +143,7 @@ const submitForm = async () => {
           type="submit"
           block
         >
-          Submit
+          登録する
         </v-btn>
       </v-form>
     </v-sheet>
