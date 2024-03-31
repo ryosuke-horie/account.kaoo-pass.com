@@ -15,7 +15,12 @@
         <td>{{ item.email }}</td>
         <td>{{ item.phone }}</td>
         <td>
-          <v-btn color="error" @click="confirmUnsubscribeUser(item)">退会</v-btn>
+          <v-btn
+            color="error"
+            @click="confirmUnsubscribeUser(item)"
+          >
+            退会
+          </v-btn>
         </td>
       </tr>
     </template>

@@ -55,6 +55,12 @@ const handleLogout = async () => {
           </router-link>
         </v-list-item>
 
+        <v-list-item title="決済関連">
+          <router-link to="/stripe/create">
+            Stripe決済用アカウント作成
+          </router-link>
+        </v-list-item>
+
         <v-list-item title="その他">
           <router-link to="/term">
             利用規約

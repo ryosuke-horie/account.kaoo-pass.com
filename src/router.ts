@@ -9,6 +9,7 @@ import UserEditPage from './pages/UserEditPage.vue'
 import TermsPage from './pages/TermsPage.vue'
 import PrivacyPolocy from './pages/PrivacyPolocy.vue'
 import ContactPage from './pages/ContactPage.vue'
+import StripeCreatePage from './pages/StripeCreatePage.vue'
 
 const routes = [
   { path: '/', name: 'Top', component: TopPage, meta: { requiresAuth: true } },
@@ -20,6 +21,7 @@ const routes = [
   { path: '/user/add', name: 'UserAdd', component: UserAddPage, meta: { requiresAuth: true } },
   { path: '/user/:id', name: 'UserDetail', component: UserDetailpage, meta: { requiresAuth: true } },
   { path: '/user/:id/edit', name: 'UserEdit', component: UserEditPage, meta: { requiresAuth: true } },
+  { path: '/stripe/create', name: 'Stripe', component: StripeCreatePage, meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({
