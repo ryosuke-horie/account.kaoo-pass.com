@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router';
 import axios from 'axios'
+import AppBar from '../components/util/AppBar.vue'
 import TextInput from '../components/Form/TextInput.vue'
 import FileInput from '../components/Form/FileInput.vue'
 
@@ -85,12 +86,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <v-app-bar
-    dark
-    app
-  >
-    <v-toolbar-title>会員登録</v-toolbar-title>
-  </v-app-bar>
+    <AppBar title="会員登録" />
   <v-container>
     <v-sheet
       class="mx-auto"

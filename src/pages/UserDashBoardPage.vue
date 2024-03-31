@@ -1,4 +1,5 @@
 <template>
+  <AppBar title="会員一覧" />
   <v-data-table-virtual
     :headers="headers"
     :items="users"
@@ -15,7 +16,12 @@
         <td>{{ item.email }}</td>
         <td>{{ item.phone }}</td>
         <td>
-          <v-btn color="error" @click="confirmUnsubscribeUser(item)">退会</v-btn>
+          <v-btn
+            color="error"
+            @click="confirmUnsubscribeUser(item)"
+          >
+            退会
+          </v-btn>
         </td>
       </tr>
     </template>
@@ -26,6 +32,7 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import useAuth from '../fooks/useAuth'
+import AppBar from '../components/util/AppBar.vue';
 
 const users = ref([]);
 const { token, fetchUser } = useAuth();
