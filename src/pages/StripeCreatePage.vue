@@ -1,9 +1,7 @@
 <script setup>
+import AppBar from '../components/util/AppBar.vue'
 </script>
 
 <template>
-  <div>
-    <h1>Stripe決済</h1>
-    <p>Stripeアカウント作成</p>
-  </div>
+  <AppBar title="Stripe決済用アカウント作成" />
 </template>

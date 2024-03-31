@@ -1,4 +1,5 @@
 <template>
+  <AppBar title="会員一覧" />
   <v-data-table-virtual
     :headers="headers"
     :items="users"
@@ -31,6 +32,7 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import useAuth from '../fooks/useAuth'
+import AppBar from '../components/util/AppBar.vue';
 
 const users = ref([]);
 const { token, fetchUser } = useAuth();
