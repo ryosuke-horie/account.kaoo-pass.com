@@ -65,7 +65,12 @@ onMounted(() => {
     <v-main>
       <v-container>
         <v-row>
-          <v-col v-for="product in products" :key="product.id" cols="12" md="4">
+          <v-col
+            v-for="product in products"
+            :key="product.id"
+            cols="12"
+            md="4"
+          >
             <v-card @click="selectedProduct = product; priceDialog = true;">
               <v-card-title>{{ product.name }}</v-card-title>
               <v-card-text>
@@ -79,16 +84,33 @@ onMounted(() => {
       </v-container>
     </v-main>
 
-    <v-dialog v-model="priceDialog" max-width="500px">
+    <v-dialog
+      v-model="priceDialog"
+      max-width="500px"
+    >
       <v-card>
         <v-card-title>価格設定</v-card-title>
         <v-card-text>
-          <v-text-field v-model="price" label="価格" type="number"></v-text-field>
+          <v-text-field
+            v-model="price"
+            label="価格"
+            type="number"
+          />
         </v-card-text>
         <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" @click="setPrice">設定</v-btn>
-          <v-btn color="secondary" @click="priceDialog = false">キャンセル</v-btn>
+          <v-spacer />
+          <v-btn
+            color="primary"
+            @click="setPrice"
+          >
+            設定
+          </v-btn>
+          <v-btn
+            color="secondary"
+            @click="priceDialog = false"
+          >
+            キャンセル
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

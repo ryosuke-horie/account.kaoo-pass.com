@@ -57,7 +57,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-<AppBar title="Stripe商品作成" />
+  <AppBar title="Stripe商品作成" />
   <v-container>
     <v-sheet
       class="mx-auto"
