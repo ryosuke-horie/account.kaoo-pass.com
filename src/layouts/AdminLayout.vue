@@ -64,10 +64,6 @@ const handleLogout = async () => {
             Stripe商品作成
           </router-link>
           <br>
-          <router-link to="/stripe/create/products/price">
-            Stripe商品価格設定
-          </router-link>
-          <br>
           <router-link to="/stripe/products">
             Stripe商品一覧
           </router-link>
