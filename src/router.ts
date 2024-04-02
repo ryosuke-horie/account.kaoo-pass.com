@@ -10,6 +10,8 @@ import TermsPage from './pages/TermsPage.vue'
 import PrivacyPolocy from './pages/PrivacyPolocy.vue'
 import ContactPage from './pages/ContactPage.vue'
 import StripeCreatePage from './pages/StripeCreatePage.vue'
+import StripeCreateProductPage from './pages/StripeCreateProductPage.vue'
+import StripeProductListPage from './pages/StripeProductListPage.vue'
 
 const routes = [
   { path: '/', name: 'Top', component: TopPage, meta: { requiresAuth: true } },
@@ -22,6 +24,8 @@ const routes = [
   { path: '/user/:id', name: 'UserDetail', component: UserDetailpage, meta: { requiresAuth: true } },
   { path: '/user/:id/edit', name: 'UserEdit', component: UserEditPage, meta: { requiresAuth: true } },
   { path: '/stripe/create', name: 'Stripe', component: StripeCreatePage, meta: { requiresAuth: true } },
+  { path: '/stripe/create/products', name: 'StripeProduct', component: StripeCreateProductPage, meta: { requiresAuth: true } },
+  { path: '/stripe/products', name: 'StripeProductList', component: StripeProductListPage, meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({

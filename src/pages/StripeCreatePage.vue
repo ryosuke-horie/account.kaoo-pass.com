@@ -26,9 +26,19 @@ const redirectToStripeToCreateAccount = async () => {
 </script>
 
 <template>
-    <AppBar title="Stripe決済用アカウント作成" />
-    <v-col cols="auto">
-        <v-btn size="x-large" @click="redirectToStripeToCreateAccount()">アカウントを作成する</v-btn>
-        <v-alert v-if="error" type="error">{{ error }}</v-alert>
-    </v-col>
+  <AppBar title="Stripe決済用アカウント作成" />
+  <v-col cols="auto">
+    <v-btn
+      size="x-large"
+      @click="redirectToStripeToCreateAccount()"
+    >
+      アカウントを作成する
+    </v-btn>
+    <v-alert
+      v-if="error"
+      type="error"
+    >
+      {{ error }}
+    </v-alert>
+  </v-col>
 </template>

@@ -86,7 +86,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-    <AppBar title="会員登録" />
+  <AppBar title="会員登録" />
   <v-container>
     <v-sheet
       class="mx-auto"
