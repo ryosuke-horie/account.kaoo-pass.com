@@ -11,6 +11,7 @@ import PrivacyPolocy from './pages/PrivacyPolocy.vue'
 import ContactPage from './pages/ContactPage.vue'
 import StripeCreatePage from './pages/StripeCreatePage.vue'
 import StripeCreateProductPage from './pages/StripeCreateProductPage.vue'
+import StripeSetPricePage from './pages/StripeSetPricePage.vue'
 
 const routes = [
   { path: '/', name: 'Top', component: TopPage, meta: { requiresAuth: true } },
@@ -24,6 +25,7 @@ const routes = [
   { path: '/user/:id/edit', name: 'UserEdit', component: UserEditPage, meta: { requiresAuth: true } },
   { path: '/stripe/create', name: 'Stripe', component: StripeCreatePage, meta: { requiresAuth: true } },
   { path: '/stripe/create/products', name: 'StripeProduct', component: StripeCreateProductPage, meta: { requiresAuth: true } },
+  { path: '/stripe/create/products/price', name: 'StripePrice', component: StripeSetPricePage, meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({
