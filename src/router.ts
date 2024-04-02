@@ -12,6 +12,7 @@ import ContactPage from './pages/ContactPage.vue'
 import StripeCreatePage from './pages/StripeCreatePage.vue'
 import StripeCreateProductPage from './pages/StripeCreateProductPage.vue'
 import StripeSetPricePage from './pages/StripeSetPricePage.vue'
+import StripeProductListPage from './pages/StripeProductListPage.vue'
 
 const routes = [
   { path: '/', name: 'Top', component: TopPage, meta: { requiresAuth: true } },
@@ -26,6 +27,7 @@ const routes = [
   { path: '/stripe/create', name: 'Stripe', component: StripeCreatePage, meta: { requiresAuth: true } },
   { path: '/stripe/create/products', name: 'StripeProduct', component: StripeCreateProductPage, meta: { requiresAuth: true } },
   { path: '/stripe/create/products/price', name: 'StripePrice', component: StripeSetPricePage, meta: { requiresAuth: true } },
+  { path: '/stripe/products', name: 'StripeProductList', component: StripeProductListPage, meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({
