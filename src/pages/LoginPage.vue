@@ -1,32 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import useAuth from '../fooks/useAuth'
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import useAuth from "../fooks/useAuth";
 
-const visible = ref(false)
-const email = ref('')
-const password = ref('')
-const router = useRouter()
-const { login } = useAuth()
+const visible = ref(false);
+const email = ref("");
+const password = ref("");
+const router = useRouter();
+const { login } = useAuth();
 
 const handleLogin = async () => {
-    try {
-        await login({ email: email.value, password: password.value })
+  try {
+    await login({ email: email.value, password: password.value });
 
-        // Topページにリダイレクト
-        router.push('/dashboard')
-    } catch (error) {
-        // エラーハンドリング
-        console.error('Login failed:', error)
-        // 適切なエラーメッセージを表示
-    }
-}
+    // Topページにリダイレクト
+    router.push("/dashboard");
+  } catch (error) {
+    // エラーハンドリング
+    console.error("Login failed:", error);
+    // 適切なエラーメッセージを表示
+  }
+};
 </script>
 
 <template>
   <div>
     <v-card
-      class="mx-auto my-16 pa-12 pb-8 d-flex flex-column  justify-center"
+      class="mx-auto my-16 pa-12 pb-8 d-flex flex-column justify-center"
       elevation="8"
       max-width="448"
       rounded="lg"
@@ -49,7 +49,9 @@ const handleLogin = async () => {
         variant="outlined"
       />
 
-      <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between">
+      <div
+        class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between"
+      >
         パスワード
       </div>
 
@@ -70,9 +72,7 @@ const handleLogin = async () => {
         variant="tonal"
       >
         <v-card-text class="text-medium-emphasis text-caption">
-          Warning: After 3 consecutive failed login attempts, you account will be temporarily locked for three
-          hours. If you must login now, you can also click "Forgot login password?" below to reset the login
-          password.
+          ログイン情報がわからなくなった場合はお手数ですがお問い合わせからご連絡ください。
         </v-card-text>
       </v-card>
 
