@@ -15,7 +15,7 @@ import UserDetailpage    from "./pages/users/UserDetailpage.vue";
 import UserEditPage      from "./pages/users/UserEditPage.vue";
 
 // Stripe関連
-import StripeCreatePage        from "./pages/stripe/StripeCreatePage.vue";
+import StripeCreateAccountPage from "./pages/stripe/StripeCreateAccountPage.vue";
 import StripeCreateProductPage from "./pages/stripe/StripeCreateProductPage.vue";
 import StripeProductListPage   from "./pages/stripe/StripeProductListPage.vue";
 
@@ -54,7 +54,7 @@ const routes = [
   {
     path: "/stripe/create",
     name: "Stripe",
-    component: StripeCreatePage,
+    component: StripeCreateAccountPage,
     meta: { requiresAuth: true },
   },
   {
