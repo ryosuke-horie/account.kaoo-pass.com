@@ -1,38 +1,8 @@
-<template>
-  <AppBar title="会員一覧" />
-  <v-data-table-virtual
-    :headers="headers"
-    :items="users"
-    item-value="name"
-  >
-    <template #item="{ item }">
-      <tr>
-        <v-avatar>
-          <v-img :src="item.avatar_image" />
-        </v-avatar>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.address }}</td>
-        <td>{{ item.email }}</td>
-        <td>{{ item.phone }}</td>
-        <td>
-          <v-btn
-            color="error"
-            @click="confirmUnsubscribeUser(item)"
-          >
-            退会
-          </v-btn>
-        </td>
-      </tr>
-    </template>
-  </v-data-table-virtual>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import useAuth from '../fooks/useAuth'
-import AppBar from '../components/util/AppBar.vue';
+import useAuth from '../../fooks/useAuth'
+import AppBar from '../../components/util/AppBar.vue';
 
 const users = ref([]);
 const { token, fetchUser } = useAuth();
@@ -97,3 +67,33 @@ const unsubscribeUser = async (user) => {
     }
 };
 </script>
+
+<template>
+  <AppBar title="会員一覧" />
+  <v-data-table-virtual
+    :headers="headers"
+    :items="users"
+    item-value="name"
+  >
+    <template #item="{ item }">
+      <tr>
+        <v-avatar>
+          <v-img :src="item.avatar_image" />
+        </v-avatar>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td>
+          <v-btn
+            color="error"
+            @click="confirmUnsubscribeUser(item)"
+          >
+            退会
+          </v-btn>
+        </td>
+      </tr>
+    </template>
+  </v-data-table-virtual>
+</template>

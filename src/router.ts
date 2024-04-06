@@ -3,13 +3,15 @@ import useAuth from "./fooks/useAuth";
 
 import LoginPage               from "./pages/LoginPage.vue";
 import TopPage                 from "./pages/TopPage.vue";
-import UserAddPage             from "./pages/UserAddPage.vue";
-import UserDashBoardPage       from "./pages/UserDashBoardPage.vue";
-import UserDetailpage          from "./pages/UserDetailpage.vue";
-import UserEditPage            from "./pages/UserEditPage.vue";
 import TermsPage               from "./pages/TermsPage.vue";
 import PrivacyPolocy           from "./pages/PrivacyPolocy.vue";
 import ContactPage             from "./pages/ContactPage.vue";
+
+// 会員管理関連
+import UserAddPage from "./pages/users/UserAddPage.vue";
+import UserDashBoardPage from "./pages/users/UserDashBoardPage.vue";
+import UserDetailpage from "./pages/users/UserDetailpage.vue";
+import UserEditPage from "./pages/users/UserEditPage.vue";
 
 // Stripe関連
 import StripeCreatePage        from "./pages/stripe/StripeCreatePage.vue";
