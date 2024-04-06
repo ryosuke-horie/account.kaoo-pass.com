@@ -1,17 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 import useAuth from "./fooks/useAuth";
 
-import LoginPage               from "./pages/LoginPage.vue";
-import TopPage                 from "./pages/TopPage.vue";
-import TermsPage               from "./pages/TermsPage.vue";
-import PrivacyPolocy           from "./pages/PrivacyPolocy.vue";
-import ContactPage             from "./pages/ContactPage.vue";
+// 認証不要なページ
+import LoginPage     from "./pages/LoginPage.vue";
+import TopPage       from "./pages/TopPage.vue";
+import TermsPage     from "./pages/TermsPage.vue";
+import PrivacyPolocy from "./pages/PrivacyPolocy.vue";
+import ContactPage   from "./pages/ContactPage.vue";
 
 // 会員管理関連
-import UserAddPage from "./pages/users/UserAddPage.vue";
+import UserAddPage       from "./pages/users/UserAddPage.vue";
 import UserDashBoardPage from "./pages/users/UserDashBoardPage.vue";
-import UserDetailpage from "./pages/users/UserDetailpage.vue";
-import UserEditPage from "./pages/users/UserEditPage.vue";
+import UserDetailpage    from "./pages/users/UserDetailpage.vue";
+import UserEditPage      from "./pages/users/UserEditPage.vue";
 
 // Stripe関連
 import StripeCreatePage        from "./pages/stripe/StripeCreatePage.vue";
@@ -24,6 +25,7 @@ const routes = [
   { path: "/term", name: "Term", component: TermsPage },
   { path: "/contact", name: "Contact", component: ContactPage },
   { path: "/privacy", name: "Privacy", component: PrivacyPolocy },
+  // 会員管理関連
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -48,6 +50,7 @@ const routes = [
     component: UserEditPage,
     meta: { requiresAuth: true },
   },
+  // Stripe関連
   {
     path: "/stripe/create",
     name: "Stripe",
