@@ -1,5 +1,5 @@
 <script setup>
-import AppBar from '../components/util/AppBar.vue'
+import AppBar from '../../components/util/AppBar.vue'
 import axios from 'axios';
 import { ref } from 'vue';
 

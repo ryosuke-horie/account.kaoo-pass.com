@@ -1,5 +1,11 @@
 {
   "[vue]": {
     "editor.formatOnSave": false
+  },
+  "[ts]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
   }
 }

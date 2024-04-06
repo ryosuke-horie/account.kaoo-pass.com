@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 import axios from 'axios'
-import AppBar from '../components/util/AppBar.vue'
+import AppBar from '../../components/util/AppBar.vue'
 
 const router = useRouter();
 const products = ref([]);

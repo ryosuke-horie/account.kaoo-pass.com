@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import axios from 'axios'
-import AppBar from '../components/util/AppBar.vue'
-import TextInput from '../components/Form/TextInput.vue'
+import AppBar from '../../components/util/AppBar.vue'
+import TextInput from '../../components/Form/TextInput.vue'
 
 const router = useRouter();
 
