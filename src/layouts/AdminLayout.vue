@@ -1,3 +1,51 @@
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import useAuth from '../fooks/useAuth';
+
+const router = useRouter();
+const { logout } = useAuth();
+
+// サイドバーの開閉状態管理
+const drawer = ref(true);
+
+// サイドバー内のメニューの開閉状態管理
+const open = ref(['Authentication', 'UserManagement', 'Payment', 'Others']);
+
+// 認証関連のメニュー
+const userManagementItems = ref([
+  ['会員一覧', 'mdi-account-multiple', '/dashboard'],
+  ['会員登録', 'mdi-account-plus', '/user/add'],
+]);
+
+// 決済関連のメニュー
+const paymentItems = ref([
+  ['Stripe決済用アカウント作成', 'mdi-credit-card-plus', '/stripe/create'],
+  ['Stripe商品作成', 'mdi-cart-plus', '/stripe/create/products'],
+  ['Stripe商品一覧', 'mdi-format-list-bulleted', '/stripe/products'],
+]);
+
+// その他のメニュー
+const otherItems = ref([
+  ['利用規約', 'mdi-file-document', '/term'],
+  ['プライバシーポリシー', 'mdi-shield-lock', '/privacy'],
+  ['お問い合わせ', 'mdi-email', '/contact'],
+]);
+
+// ログアウトの処理
+const handleLogout = async () => {
+    try {
+        // tokenをローカルストレージから削除する
+        await logout();
+        // ログイン画面に遷移
+        router.push('/login');
+    } catch (error) {
+        // エラーハンドリング
+        console.error('Logout failed:', error);
+    }
+};
+</script>
+
 <template>
   <v-layout class="rounded rounded-md">
     <v-app-bar>
@@ -116,51 +164,3 @@
     </v-main>
   </v-layout>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-import useAuth from '../fooks/useAuth';
-
-const router = useRouter();
-const { logout } = useAuth();
-
-// サイドバーの開閉状態管理
-const drawer = ref(true);
-
-// サイドバー内のメニューの開閉状態管理
-const open = ref(['Authentication', 'UserManagement', 'Payment', 'Others']);
-
-// 認証関連のメニュー
-const userManagementItems = ref([
-  ['会員一覧', 'mdi-account-multiple', '/dashboard'],
-  ['会員登録', 'mdi-account-plus', '/user/add'],
-]);
-
-// 決済関連のメニュー
-const paymentItems = ref([
-  ['Stripe決済用アカウント作成', 'mdi-credit-card-plus', '/stripe/create'],
-  ['Stripe商品作成', 'mdi-cart-plus', '/stripe/create/products'],
-  ['Stripe商品一覧', 'mdi-format-list-bulleted', '/stripe/products'],
-]);
-
-// その他のメニュー
-const otherItems = ref([
-  ['利用規約', 'mdi-file-document', '/term'],
-  ['プライバシーポリシー', 'mdi-shield-lock', '/privacy'],
-  ['お問い合わせ', 'mdi-email', '/contact'],
-]);
-
-// ログアウトの処理
-const handleLogout = async () => {
-    try {
-        // tokenをローカルストレージから削除する
-        await logout();
-        // ログイン画面に遷移
-        router.push('/login');
-    } catch (error) {
-        // エラーハンドリング
-        console.error('Logout failed:', error);
-    }
-};
-</script>
