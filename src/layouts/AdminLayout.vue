@@ -1,7 +1,7 @@
 <template>
   <v-layout class="rounded rounded-md">
     <v-app-bar>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
       <img
         src="../assets/logo_150x50.webp"
         alt="logo"
@@ -10,43 +10,50 @@
     </v-app-bar>
 
     <v-navigation-drawer
-        :permanent="true"
-        :mini-variant="!drawer"
-        :expand-on-hover="!drawer"
-        width="400"
-        v-model="drawer"
+      v-model="drawer"
+      :permanent="true"
+      :mini-variant="!drawer"
+      :expand-on-hover="!drawer"
+      width="400"
     >
-      <v-list v-model:opened="open" density="compact" nav>
-        <v-list-item prepend-icon="mdi-home" title="メニュー"></v-list-item>
+      <v-list
+        v-model:opened="open"
+        density="compact"
+        nav
+      >
+        <v-list-item
+          prepend-icon="mdi-home"
+          title="メニュー"
+        />
 
         <v-list-group value="Authentication">
-          <template v-slot:activator="{ props }">
+          <template #activator="{ props }">
             <v-list-item
               v-bind="props"
               prepend-icon="mdi-account-circle"
               title="認証"
-            ></v-list-item>
+            />
           </template>
 
           <v-list-item
             prepend-icon="mdi-login"
             title="ログイン"
             to="/login"
-          ></v-list-item>
+          />
           <v-list-item
             prepend-icon="mdi-logout"
             title="ログアウト"
             @click="handleLogout"
-          ></v-list-item>
+          />
         </v-list-group>
 
         <v-list-group value="UserManagement">
-          <template v-slot:activator="{ props }">
+          <template #activator="{ props }">
             <v-list-item
               v-bind="props"
               prepend-icon="mdi-account-group"
               title="会員管理"
-            ></v-list-item>
+            />
           </template>
 
           <v-list-item
@@ -56,16 +63,16 @@
             :title="title"
             :value="title"
             :to="path"
-          ></v-list-item>
+          />
         </v-list-group>
 
         <v-list-group value="Payment">
-          <template v-slot:activator="{ props }">
+          <template #activator="{ props }">
             <v-list-item
               v-bind="props"
               prepend-icon="mdi-credit-card"
               title="決済関連"
-            ></v-list-item>
+            />
           </template>
 
           <v-list-item
@@ -75,16 +82,16 @@
             :title="title"
             :value="title"
             :to="path"
-          ></v-list-item>
+          />
         </v-list-group>
 
         <v-list-group value="Others">
-          <template v-slot:activator="{ props }">
+          <template #activator="{ props }">
             <v-list-item
               v-bind="props"
               prepend-icon="mdi-dots-horizontal"
               title="その他"
-            ></v-list-item>
+            />
           </template>
 
           <v-list-item
@@ -94,7 +101,7 @@
             :title="title"
             :value="title"
             :to="path"
-          ></v-list-item>
+          />
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
