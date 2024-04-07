@@ -62,7 +62,7 @@ const handleLogout = async () => {
       :permanent="true"
       :mini-variant="!drawer"
       :expand-on-hover="!drawer"
-      width="400"
+      width="350"
     >
       <v-list
         v-model:opened="open"
