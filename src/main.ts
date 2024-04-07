@@ -8,7 +8,8 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
+import '@mdi/font/css/materialdesignicons.css';
+import { aliases, mdi } from 'vuetify/iconsets/mdi';
 
 const vuetify = createVuetify({
   components,
@@ -20,7 +21,7 @@ const vuetify = createVuetify({
       mdi,
     },
   },
-})
+});
 
 // ユーザー情報を取得する
 // const { fetchUser } = useAuth();
