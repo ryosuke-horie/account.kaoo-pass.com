@@ -1,3 +1,4 @@
+<!-- @see https://kiyaku.jp/hinagata/privacy.html -->
 <template>
   <v-container>
     <v-row justify="center">
@@ -103,14 +104,3 @@
     </v-row>
   </v-container>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-
-// 必要に応じてデータや関数を定義
-
-</script>
-
-<style scoped>
-/* 必要に応じてスタイルを定義 */
-</style>
